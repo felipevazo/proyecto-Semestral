@@ -36,7 +36,7 @@ static Scanner entrada=new Scanner(System.in);
         contador(trabajo);
         actividades(actividades);
         contador(descanso);
-    
+    // AGREGAR COMENTARIO diferente segun situacion.
         
     }
     
