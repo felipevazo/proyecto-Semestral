@@ -36,11 +36,14 @@ static Scanner entrada=new Scanner(System.in);
         System.out.println("Una vez esto ocurra, comenzará a contar otra vez, para medir su descanso entre periodos de trabajo.");
         contador(trabajo);
         actividades(actividades);
+        tiempo_usuario();
+        comienzo_actividad()
         contador(descanso);
     // AGREGAR COMENTARIO diferente segun situacion.
         
     }
     
+    //¿¿¿este contador es el mismo del que esta en menu? el de contador(trabajo)?????
     private static void contador(int tope) throws InterruptedException
     {
         int horas=0;
@@ -70,6 +73,7 @@ static Scanner entrada=new Scanner(System.in);
     }
     private static void actividades(int numeroactividades)
     {
+        //¿¿¿¿que es el trato????
         //Basicamente, el azar decidirá la actividad para el agotado usuario.
         int trato=(int)(Math.random()*(numeroactividades-1) +1);
         switch(trato)
@@ -90,6 +94,42 @@ static Scanner entrada=new Scanner(System.in);
         //Avanzando, esto debería tomar mas opciones, desplegar en la misma pantalla actividades a realizar.
         //O directamente un cafe con un cigarro, a gusto del usuario(dentro de las opciones que el mismo programa barajará).
         
+        private static void actividades();
+        {
+            System.out.println("Imaginese que tiene un día libre, ¿Cuál de las siguientes actividades haría?");
+            System.out.println("(Para seleccionar haga click sobre la imagen)");
+            //aquí hay que colocar imagenes en una ventana, creo que queda mejor así que ir preguntando uno por uno y que el usuario
+            //decida si o no. Supuestamente lo veremos mas adelante, asi que se puede hacer
+        }
+        
+        private static double tiempo_usuario()
+        {
+        //la idea es que el usuario defina cada cuanto tiempo quiere un descanso dependiendo de la actividad que realiza
+        //obviamente con un mínimo para que descanse al menos 2 veces al día
+        
+            System.out.println("¿Cada cuántas horas puede tomarse un descanso?");
+            System.out.println(("Debe ingresar un máximo de 4 horas, si no es preciso puede ingresar un decimal"))
+            System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5")
+            tiempo_usu=leer.nextDouble();
+            //validar el ingreso
+            return tiempo_usu;
+        }
+        
+        private static double comienzo_actividad()
+        {
+        // se debe preguntar a que hora comienza su actividad laboral o lo que realice para que sea acorde a sus tiempos
+            System.out.println("¿A que hora comienza su actividad (laboral o doméstica)?")
+            System.out.println("Debe ingresar en formato de 24 hrs, si no es preciso puede ingresar un decimal ")
+            System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5")
+            comienzo_act=leer.nextDouble();
+            //validar el ingreso
+            return comienzo_act
+        }
+        
+        
+        
         
     }
+    
+    
 }
