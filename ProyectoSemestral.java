@@ -1,57 +1,97 @@
 //hola estoy pobando esto porque no me lo quiero hechar, holaaaaa
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package proyecto.semestral;
-import java.util.Scanner;
+import java.util.*;
 
-/**
- *
- * @author Rodrigo
- */
 public class ProyectoSemestral {
 static Scanner entrada=new Scanner(System.in); 
-
+static double topeTrabajo, topeDescanso;
+static ArrayList<String> listaActividades= new ArrayList<>();
+static int topeTotal;
+static int contadorTope;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+      
         // TODO code application logic here
     }
+
+    public static double getTopeTrabajo() {
+        return topeTrabajo;
+    }
+
+    public static double getTopeDescanso() {
+        return topeDescanso;
+    }
+
+    public static ArrayList<String> getListaActividades() {
+        return listaActividades;
+    }
+
+    public static int getTopeTotal() {
+        return topeTotal;
+    }
+
+    public static int getContadorTope() {
+        return contadorTope;
+    }
+
+    public static void setTopeTrabajo(double topeTrabajo) {
+        ProyectoSemestral.topeTrabajo = topeTrabajo;
+    }
+
+    public static void setTopeDescanso(double topeDescanso) {
+        ProyectoSemestral.topeDescanso = topeDescanso;
+    }
+
+    public static void setListaActividades(ArrayList<String> listaActividades) {
+        ProyectoSemestral.listaActividades = listaActividades;
+    }
+
+    public static void setTopeTotal(int topeTotal) {
+        ProyectoSemestral.topeTotal = topeTotal;
+    }
+
+    public static void setContadorTope(int contadorTope) {
+        ProyectoSemestral.contadorTope = contadorTope;
+    }
+    
     
     public static void menu() throws InterruptedException
     {
-        int trabajo=120;
-        int descanso=30;
         //El valor de actividades en el futuro correspondera al tamaño de una matriz (.length)
-        int actividades=123123;
+       
         //Aqui irá selección de actividades favoritas de usuario según una lista que ira consultando el programa.
         //Es decir, el programa le lanzara opciones, el usuario responderá si o no, y guardará las preferencias.
         //Con el fin de otorgar luego una de sus preferencias como actividad a realizar de descanso cada 2 horas.
         //Evaluando nueva forma de entregar mensajes en forma de metodo mas ordenada, mientras tanto.
-        System.out.println("Ahora el programa comenzará a contar hasta que pasen 2 horas.");
-        System.out.println("Una vez esto ocurra, comenzará a contar otra vez, para medir su descanso entre periodos de trabajo.");
-        contador(trabajo);
-        actividades(actividades);
-        tiempo_usuario();
-        comienzo_actividad()
-        contador(descanso);
-    // AGREGAR COMENTARIO diferente segun situacion.
+        topeTrabajo=tiempo_usuario();
         
+        topeDescanso=(tiempo_descanso(topeTrabajo)/60);
+        comienzo_actividad(); 
+        System.out.println("Ahora el programa comenzará a contar hasta que pasen las horas que usted decidió.");
+        System.out.println("Una vez esto ocurra, comenzará a contar otra vez, para medir su descanso entre periodos de trabajo.");
+        while(contadorTope<topeTotal)
+        {
+        contador(topeTrabajo);
+        actividades();
+        contador(topeDescanso); 
+    // AGREGAR COMENTARIO diferente segun situacion.
+        }
+        System.out.println("Tope de horas definidas maximas, muchas gracias por usar el programa y que tenga un buen dia.");
     }
     
     //¿¿¿este contador es el mismo del que esta en menu? el de contador(trabajo)?????
-    private static void contador(int tope) throws InterruptedException
+    //R: si, se puede usar en ambos contextos
+    private static void contador(double tope) throws InterruptedException
     {
-        int horas=0;
+        double pDecimal=tope - (int)tope;
+        int minTotales=(int)tope*60+(int)(pDecimal*60);
         int minutos=0;
         int segundos=0;
-        int dias=0;
         boolean ciclo =true;
-        while(ciclo)
+        while(minutos<minTotales)
         {
             Thread.sleep(1000);
             segundos+=1;
@@ -60,11 +100,8 @@ static Scanner entrada=new Scanner(System.in);
                 segundos=0;
                 minutos+=1;
             }
-            if (minutos==tope)
-            {
-                ciclo=false;
-            }
-        
+            
+        setContadorTope(getContadorTope()+minutos);
     }
      //Una vez transcurridas 2 horas, el sistema lanzará una ventana emergente
         System.out.println("Has pasado 2 horas sentado en el computador trabajando, toma un descanso.");
@@ -93,13 +130,18 @@ static Scanner entrada=new Scanner(System.in);
         }
         //Avanzando, esto debería tomar mas opciones, desplegar en la misma pantalla actividades a realizar.
         //O directamente un cafe con un cigarro, a gusto del usuario(dentro de las opciones que el mismo programa barajará).
-        
-        private static void actividades();
+    } 
+        private static void actividades()
         {
             System.out.println("Imaginese que tiene un día libre, ¿Cuál de las siguientes actividades haría?");
             System.out.println("(Para seleccionar haga click sobre la imagen)");
+            
             //aquí hay que colocar imagenes en una ventana, creo que queda mejor así que ir preguntando uno por uno y que el usuario
             //decida si o no. Supuestamente lo veremos mas adelante, asi que se puede hacer
+            
+            
+            
+            //La imagen podria guardar datos en el arraylist que instancie arriba, para que sea mas facil obtener los topes luego(usando el arraylist.size y todo eso)
         }
         
         private static double tiempo_usuario()
@@ -108,28 +150,89 @@ static Scanner entrada=new Scanner(System.in);
         //obviamente con un mínimo para que descanse al menos 2 veces al día
         
             System.out.println("¿Cada cuántas horas puede tomarse un descanso?");
-            System.out.println(("Debe ingresar un máximo de 4 horas, si no es preciso puede ingresar un decimal"))
-            System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5")
-            tiempo_usu=leer.nextDouble();
-            //validar el ingreso
+            System.out.println(("Debe ingresar un máximo de 4 horas, si no es preciso puede ingresar un decimal"));
+            System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5");
+            System.out.println("Se ruega ingresar un tiempo valido, con un tope de 4 horas, y un minimo de 1");
+            double tiempo_usu=0;
+            while(validarDouble(tiempo_usu,1,4))
+            {
+             tiempo_usu=entrada.nextDouble();
+            }//validar el ingreso
             return tiempo_usu;
         }
-        
-        private static double comienzo_actividad()
+        private static double tiempo_descanso(double topeTrabajo)
         {
-        // se debe preguntar a que hora comienza su actividad laboral o lo que realice para que sea acorde a sus tiempos
-            System.out.println("¿A que hora comienza su actividad (laboral o doméstica)?")
-            System.out.println("Debe ingresar en formato de 24 hrs, si no es preciso puede ingresar un decimal ")
-            System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5")
-            comienzo_act=leer.nextDouble();
-            //validar el ingreso
-            return comienzo_act
+            if (topeTrabajo<2.5) {
+                
+            System.out.println("Ahora elija el tiempo de descanso luego de su actividad de trabajo");  
+                System.out.println("Puede variar entre 10 y 30 minutos.");
+                int aux =45676875;
+                while(validarInt(aux,10,30))
+                {
+                    aux =entrada.nextInt();
+                }
+                return aux;
+            }
+            else
+            {
+                return 30;
+            }
         }
         
+        private  static void comienzo_actividad()
+        {
+        // se debe preguntar a que hora comienza su actividad laboral o lo que realice para que sea acorde a sus tiempos
+        // A esto le haria una pequeña adaptacion, mas que preguntar a que hora inicia su actividad(recordar que el reloj no fuunciona con calendar)
+        // Preguntaría cuantas horas pretende trabajar como maximo
+           /*
+            System.out.println("¿A que hora comienza su actividad (laboral o doméstica)?");
+            System.out.println("Debe ingresar en formato de 24 hrs, si no es preciso puede ingresar un decimal ");
+            System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5");
+            double comienzo_act=entrada.nextDouble();
+                   */
+            //validar el ingreso
+            //ALGO ASI
+            System.out.println("Por favor ingrese la cantidad de horas de trabajo maximas durante la jornada de hoy");
+            System.out.println("Considerando un minimo de 4 y un maximo de 10");
+            System.out.println("Se permite ingreso de decimales, como 5.5 horas, 4.25 horas, etc.");
+            double total_act=0;
+            while(validarDouble(total_act,4,10))
+            {
+                total_act=entrada.nextDouble();
+            }
+            double pDecimal=total_act-(int)total_act;
+            setTopeTotal((int)total_act*60+(int)(pDecimal*60));
+        }
+        private static boolean validarDouble(double numero,double topeBajo, double topeAlto)
+        {
+            if(numero<topeBajo&&numero>topeAlto)
+            {
+                System.out.println("Dato invalido, por favor intente nuevamente");
+                return true;
+            }
+            else
+            {
+                return false;
+            } 
+                
+            
+            
+        }
         
+        private static boolean validarInt(int numero,int topeBajo,int topeAlto)
+        {
+            if(numero<topeBajo&&numero>topeAlto)
+            {
+                System.out.println("Dato invalido, intente nuevamente");
+                return true;
+            }
+            else
+            {
+                
+                return false;
+            }
+            
+        }
         
         
     }
-    
-    
-}
