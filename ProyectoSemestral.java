@@ -9,12 +9,22 @@ static double topeTrabajo, topeDescanso;
 static ArrayList<String> listaActividades= new ArrayList<>();
 static int topeTotal;
 static int contadorTope;
+static boolean cierreTope=false;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
       
         // TODO code application logic here
+    }
+    public static boolean getCierreTope()
+    {
+        return cierreTope;
+    }
+    public static void setCierreTope(boolean cierreTope)
+    {
+        this.cierreTope=cierreTope;
+        
     }
 
     public static double getTopeTrabajo() {
@@ -91,17 +101,25 @@ static int contadorTope;
         int minutos=0;
         int segundos=0;
         boolean ciclo =true;
-        while(minutos<minTotales)
+        while(minutos<minTotales||cierreTope==false)
         {
+            //En resumen, el ciclo cortara cuando se cumplan los minutos decididos por usuario.
+            //O cuando se complete la jornada laboral total, tambien definida por usuario.
             Thread.sleep(1000);
             segundos+=1;
             if(segundos>59)
             {
                 segundos=0;
                 minutos+=1;
+                setContadorTope(getContadorTope()+1);
             }
+            if(getContadorTope()==topeTotal)
+            {
+                cierreTope==true;
+            }
+        }
             
-        setContadorTope(getContadorTope()+minutos);
+        
     }
      //Una vez transcurridas 2 horas, el sistema lanzará una ventana emergente
         System.out.println("Has pasado 2 horas sentado en el computador trabajando, toma un descanso.");
@@ -133,8 +151,39 @@ static int contadorTope;
     } 
         private static void actividades()
         {
+            //Se crea una variable resp por mientras que aprendemos a interactuar con ventanas.
             System.out.println("Imaginese que tiene un día libre, ¿Cuál de las siguientes actividades haría?");
             System.out.println("(Para seleccionar haga click sobre la imagen)");
+            //Actividades tentativas
+            System.out.println("Imagen con parrafos de libro")
+            resp=entrada.next();
+            if(resp=="si")
+            {
+                listaActividades.add("Leer parrafos de libros.");
+            }
+            System.out.println("Imagen que represente musica relajante")
+            resp=entrada.next();
+            if(resp=="si")
+            {
+                listaActividades.add("Reproducir musica relajante, acompañada de imagenes");
+                
+            }
+            System.out.println("Imagen representativa de bebida caliente y cigarro");
+            //EL CIGARRO ES DAÑINO PARA LA SALUD; PERO RELAJA AL USUARIO EN SI SI ESTE FUMA 
+            if(resp=="si")
+            {
+                listaActividades.add("Un momento de descanso, con un cigarro y un cafe, alejado del computador.");
+            }
+            System.out.println("Imagen representativa de caminata.");
+            if(resp=="si")
+            {
+                listaActividades.add("Una caminata por su sector");
+            }
+            System.out.println("Imagen que represente el tocar musica")
+            if(resp=="si")
+            {
+                listaActividades.add("Interpretar canciones para distraerse.")
+            }
             
             //aquí hay que colocar imagenes en una ventana, creo que queda mejor así que ir preguntando uno por uno y que el usuario
             //decida si o no. Supuestamente lo veremos mas adelante, asi que se puede hacer
