@@ -85,7 +85,7 @@ static boolean cierreTope=false;
         while(contadorTope<topeTotal)
         {
         contador(topeTrabajo);
-        actividades();
+        actividades(listaActividades.size());
         contador(topeDescanso); 
     // AGREGAR COMENTARIO diferente segun situacion.
         }
@@ -130,21 +130,48 @@ static boolean cierreTope=false;
     {
         //¿¿¿¿que es el trato????
         //Basicamente, el azar decidirá la actividad para el agotado usuario.
-        int trato=(int)(Math.random()*(numeroactividades-1) +1);
-        switch(trato)
+        int i=(int)(Math.random()*(numeroactividades-1)+1 );
+        switch(i)
         {
             case 1:
                 //Se desplegara ventana con mensaje
-                System.out.println("Para distraerse, realizará la actividad 1-> aqui irá el nombre de actividad, en vez de 1 obviamente");
+                System.out.println("es momento de "+listaActividades.get(0));
                 break;
             case 2:
-                System.out.println("Similar a arriba caso 2");
+                System.out.println("sorpresa, ha tocado"+listaActividades.get(1));
             case 3:
-                System.out.println("Similar a arriba caso 3");
+                System.out.println("momento de "+listaActividades.get(2));
                 break;
+            case 4:
+                System.out.println("Ha tocado "+listaActividades.get(3));
+            case 5:
+                System.out.println("es la hora de "+listaActividades.get(5));
             default:
-                System.out.println("Caso final");
+                System.out.println("Bienvenido al bonus, sientese, mire al techo y piense en su quehacer de la semana durante unos minutos.");
                 break;
+                
+                if(buscaLinea(listaActividades.get(i-1),"parrafos")
+               {
+                    System.out.println("Se abrira un parrafo de un libro aleatorio, para que ud disfrute de una distraccion sutil.");
+                        //Aqui se abre el archivo de texto estatico 
+                }
+                else if(buscaLinea(listaActividades.get(i-1),"musica")
+                {
+                     System.out.println("a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.");
+                }
+                else if(buscaLinea(listaActividades.get(i-1),"cafe")
+                {
+                    System.out.println("Preparese un cafe con calma, prenda su cigarro(o solamente el cafe, como ud prefiera) y tome su tiempo para degustarlo.");
+                }
+                else if(buscaLinea(listaActividades.get(i-1),"caminata")
+                {
+                    System.out.println("Momento de una caminata, de una vuelta por su calle, tome aire y disfrute de la vista.");
+                }
+                else
+                {
+                    System.out.println("Disfrute de interpretar sus canciones favoritas en su instrumento deseado.");
+                    //Se podria añadir una pagina web con acordes, para ayudar a pensar cosas que tocar.
+                }
         }
         //Avanzando, esto debería tomar mas opciones, desplegar en la misma pantalla actividades a realizar.
         //O directamente un cafe con un cigarro, a gusto del usuario(dentro de las opciones que el mismo programa barajará).
@@ -283,5 +310,14 @@ static boolean cierreTope=false;
             
         }
         
-        
+        public static boolean buscaLinea(String cadena,String buscar)
+        {
+              Pattern pat = Pattern.compile(buscar);
+              Matcher mat = pat.matcher(cadena);
+              if (mat.matches()) {
+                     return true;
+               } else {
+                   return false;
+               }
+        }
     }
