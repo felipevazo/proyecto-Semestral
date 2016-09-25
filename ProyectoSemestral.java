@@ -149,28 +149,32 @@ static boolean cierreTope=false;
             default:
                 System.out.println("Bienvenido al bonus, sientese, mire al techo y piense en su quehacer de la semana durante unos minutos.");
                 break;
-                
-                if(buscaLinea(listaActividades.get(i-1),"parrafos")
+              
+                if(buscaLinea(listaActividades.get(i-1),".*parrafos.*")
                {
                     System.out.println("Se abrira un parrafo de un libro aleatorio, para que ud disfrute de una distraccion sutil.");
                         //Aqui se abre el archivo de texto estatico 
                 }
-                else if(buscaLinea(listaActividades.get(i-1),"musica")
+                else if(buscaLinea(listaActividades.get(i-1),".*musica.*")
                 {
                      System.out.println("a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.");
                 }
-                else if(buscaLinea(listaActividades.get(i-1),"cafe")
+                else if(buscaLinea(listaActividades.get(i-1),".*cafe.*")
                 {
                     System.out.println("Preparese un cafe con calma, prenda su cigarro(o solamente el cafe, como ud prefiera) y tome su tiempo para degustarlo.");
                 }
-                else if(buscaLinea(listaActividades.get(i-1),"caminata")
+                else if(buscaLinea(listaActividades.get(i-1),".*caminata.*")
                 {
                     System.out.println("Momento de una caminata, de una vuelta por su calle, tome aire y disfrute de la vista.");
                 }
-                else
+                else if(buscaLinea(listaActividades.get(i-1),".*canciones.*);
                 {
                     System.out.println("Disfrute de interpretar sus canciones favoritas en su instrumento deseado.");
                     //Se podria añadir una pagina web con acordes, para ayudar a pensar cosas que tocar.
+                }
+                else
+                {
+                    System.out.println("Momento de hacer literalmente.. nada, apague la pantalla unos minutos, mire a la nada y piense, disfrute de este momento de su vida haciendo absolutamente nada.");
                 }
         }
         //Avanzando, esto debería tomar mas opciones, desplegar en la misma pantalla actividades a realizar.
