@@ -122,10 +122,10 @@ static boolean cierreTope=false;
         System.out.println("El sistema te entregará una actividad entre tus elegidas para realizar."); 
     }
     
-    private static void actividades(int numeroactividades)
+    private static void actividades(int numeroActividades)
     {
         //Basicamente, el azar decidirá la actividad para el agotado usuario.
-        int i=(int)(Math.random()*(numeroactividades-1)+1 );
+        int i=(int)(Math.random()*(numeroActividades-1)+1 );
         switch(i)
         {
             case 1:
