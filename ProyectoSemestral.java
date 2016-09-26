@@ -124,7 +124,6 @@ static boolean cierreTope=false;
     
     private static void actividades(int numeroactividades)
     {
-        //¿¿¿¿que es el trato????
         //Basicamente, el azar decidirá la actividad para el agotado usuario.
         int i=(int)(Math.random()*(numeroactividades-1)+1 );
         switch(i)
@@ -217,7 +216,7 @@ static boolean cierreTope=false;
             //aquí hay que colocar imagenes en una ventana, creo que queda mejor así que ir preguntando uno por uno y que el usuario
             //decida si o no. Supuestamente lo veremos mas adelante, asi que se puede hacer
             
-            //La imagen podria guardar datos en el arraylist que instancie arriba, para que sea mas facil obtener los topes luego(usando el arraylist.size y todo eso)
+            //la imagen podria guardar datos en el arraylist que instancie arriba, para que sea mas facil obtener los topes luego(usando el arraylist.size y todo eso)
         }
         
         private static double tiempo_usuario()
