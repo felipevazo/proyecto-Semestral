@@ -9,6 +9,11 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
 public class ProyectoSemestral {
 private static Scanner entrada=new Scanner(System.in); 
 private static double topeTrabajo, topeDescanso;
@@ -18,13 +23,15 @@ private static int contadorTope;
 private static boolean cierreTope=false;
 private static LeeFichero lee=new LeeFichero();
 private static EscribeFichero escribe=new EscribeFichero();
+private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         menu();
       
-        // TODO code application logic here
+        // TODO code application logic here2
+        
     }
     public static boolean getCierreTope()
     {
@@ -76,7 +83,7 @@ private static EscribeFichero escribe=new EscribeFichero();
     }
     
     
-    public static void menu() throws InterruptedException
+    public static void menu() throws InterruptedException, IOException
     {
           //El valor de actividades en el futuro correspondera al tamaño de una matriz (.length)
        
@@ -100,12 +107,27 @@ private static EscribeFichero escribe=new EscribeFichero();
            System.out.println("¿Desea modificar sus datos de ingreso, usados la ultima vez?");
            System.out.println("Referencia a tiempos de trabajo, descanso y actividades a elegir.");
            String resp=entrada.next().toLowerCase();
-           if(!resp.equals("si"))
+           
+           lee.pasarArray();
+           topeTrabajo=Double.parseDouble(lee.devolverString(0));
+           topeDescanso=Double.parseDouble(lee.devolverString(1));
+           topeTotal=Integer.parseInt(lee.devolverString(2));
+           
+                       for (int i = 0; i < listaActividades.size(); i++) {
+                         listaActividades.remove(i);
+                   
+                        }
+           for (int i = 3; i < lee.devolverTamaño(); i++) {
+              listaActividades.add(lee.devolverString(i));
+               
+               
+           }
+           if(resp.equals("si"))
            {
                System.out.println("Ingrese la palabra correspondiente a lo que desea modificar.");
                System.out.println("Es decir, trabajo,descanso o actividades.");
                String rsp="no";
-               while(!rsp.equals("trabajo")&&!resp.equals("descanso")&&resp.equals("actividades"))
+               while(!rsp.equals("trabajo")&&!resp.equals("descanso")&&!resp.equals("actividades"))
                {
                rsp=entrada.next().toLowerCase();
                if(!rsp.equals("trabajo")&&!resp.equals("descanso")&&resp.equals("actividades"))
@@ -140,20 +162,6 @@ private static EscribeFichero escribe=new EscribeFichero();
                
                
            escribe.escribe(topeTrabajo, topeDescanso,topeTotal, listaActividades);
-           }
-           lee.pasarArray();
-           topeTrabajo=Double.parseDouble(lee.devolverString(0));
-           topeDescanso=Double.parseDouble(lee.devolverString(1));
-           topeTotal=Integer.parseInt(lee.devolverString(2));
-           
-                       for (int i = 0; i < listaActividades.size(); i++) {
-                         listaActividades.remove(i);
-                   
-                        }
-           for (int i = 3; i < lee.devolverTamaño(); i++) {
-              listaActividades.add(lee.devolverString(i-2));
-               
-               
            }
        
        }
@@ -231,6 +239,8 @@ private static EscribeFichero escribe=new EscribeFichero();
                 else if(buscaLinea(listaActividades.get(i-1),".*musica.*"))
                 {
                      System.out.println("a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.");
+                     Reproductor repr=new Reproductor();
+                     repr.reproducir();
                 }
                 else if(buscaLinea(listaActividades.get(i-1),".*cafe.*"))
                 {
@@ -306,10 +316,18 @@ private static EscribeFichero escribe=new EscribeFichero();
             System.out.println("por ejemplo: si son 2 horas y media ingrese 2.5");
             System.out.println("Se ruega ingresar un tiempo valido, con un tope de 4 horas, y un minimo de 1");
             double tiempoUsu=0;
-            while(validarDouble(tiempoUsu,1,4))
+            boolean conf=false;
+            while(conf==false)
             {
              tiempoUsu=entrada.nextDouble();
-            }//validar el ingreso
+             conf=validarDouble(tiempoUsu,1,4);
+             if(conf==false)
+             {
+                 System.out.println("Dato invalido, por favor ingrese numeros entre 1 y 4, se aceptan decimales con punto.");
+             }
+                 
+                   
+            }
             return tiempoUsu;
         }
 
@@ -320,9 +338,16 @@ private static EscribeFichero escribe=new EscribeFichero();
                 System.out.println("Ahora elija el tiempo de descanso luego de su actividad de trabajo");  
                 System.out.println("Puede variar entre 10 y 30 minutos.");
                 int aux =45676875;
-                while(validarInt(aux,10,30))
+                boolean conf=false;
+                while(conf==false)
                 {
                     aux =entrada.nextInt();
+                    conf=validarInt(aux,10,30);
+                    if(conf==false)
+                        
+                    {
+                        System.out.println("Dato invalido, ingrese numeros entre 10 y 30 porfavor, NO se admiten decimales.");
+                    }
                 }
                 return aux;
                 }
@@ -331,7 +356,7 @@ private static EscribeFichero escribe=new EscribeFichero();
                 return 30;
             }
         }
-         private  static void comienzoActividad()
+         private  static void comienzoActividad() throws IOException
         {
         // se debe preguntar a que hora comienza su actividad laboral o lo que realice para que sea acorde a sus tiempos
         // A esto le haria una pequeña adaptacion, mas que preguntar a que hora inicia su actividad(recordar que el reloj no fuunciona con calendar)
@@ -348,9 +373,16 @@ private static EscribeFichero escribe=new EscribeFichero();
             System.out.println("Considerando un minimo de 4 y un maximo de 10");
             System.out.println("Se permite ingreso de decimales, como 5.5 horas, 4.25 horas, etc.");
             double totalAct=0;
-            while(validarDouble(totalAct,4,10))
+            boolean conf=false;
+            while(conf==false)
             {
-                totalAct=entrada.nextDouble();
+               String aux = br.readLine();
+               totalAct=Double.parseDouble(aux);
+                conf=validarDouble(totalAct,4,10);
+                if(conf==false)
+                {
+                    System.out.println("Dato invalido, Ingrese numeros entre 4 y 10, con decimales aceptados.");
+                }
             }
             double pDecimal=totalAct-(int)totalAct;
             setTopeTotal((int)totalAct*60+(int)(pDecimal*60));
@@ -411,4 +443,3 @@ private static EscribeFichero escribe=new EscribeFichero();
             
         }
 }
-        
