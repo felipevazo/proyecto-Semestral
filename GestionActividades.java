@@ -5,7 +5,12 @@
  */
 package proyectosemestral;
 
+import java.awt.Desktop;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
+import javazoom.jl.decoder.JavaLayerException;
 
 
 /**
@@ -13,6 +18,7 @@ import java.util.ArrayList;
  * @author dci
  */
 public class GestionActividades {
+    String actividad;
 
     public ArrayList<String> getListaActividades() {
         return listaActividades;
@@ -97,56 +103,97 @@ public class GestionActividades {
     {
         //Basicamente, el azar decidirá la actividad para el agotado usuario.
         int i=(int)(Math.random()*(numeroActividades-1)+1 );
-        switch(i)
-        {
-            case 1:
-                //Se desplegara ventana con mensaje
-                System.out.println("es momento de "+listaActividades.get(0));
-                break;
-            case 2:
-                System.out.println("sorpresa, ha tocado"+listaActividades.get(1));
-            case 3:
-                System.out.println("momento de "+listaActividades.get(2));
-                break;
-            case 4:
-                System.out.println("Ha tocado "+listaActividades.get(3));
-            case 5:
-                System.out.println("es la hora de "+listaActividades.get(5));
-            default:
-                System.out.println("Bienvenido al bonus, sientese, mire al techo y piense en su quehacer de la semana durante unos minutos.");
-                break;
-        }
+
               
                 if(val.buscaLinea(listaActividades.get(i-1),".*parrafos.*"))
                 {
-                    return "Se abrira un parrafo de un libro aleatorio, para que ud disfrute de una distraccion sutil.";
-                    //Aqui se abre el archivo de texto estatico 
+                    actividad="Se abrira un parrafo de un libro aleatorio, para que ud disfrute de una distraccion sutil.";
+                    return actividad;
+                   
                 }
                 else if(val.buscaLinea(listaActividades.get(i-1),".*musica.*"))
                 {
-                     return "a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.";
+                    actividad="a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.";
+                     return actividad;
                      
                 }
                 else if(val.buscaLinea(listaActividades.get(i-1),".*cafe.*"))
                 {
-                    return "Preparese un cafe con calma, prenda su cigarro(o solamente el cafe, o un té, una leche por ultimo, como ud prefiera) y tome su tiempo para degustarlo.";
+                    actividad="Disfrutar de una bebida caliente, acompañada con lo que usted prefiera.";
+                    return actividad;
                 }
                 else if(val.buscaLinea(listaActividades.get(i-1),".*caminata.*"))
                 {
-                    return "Momento de una caminata, de una vuelta por su calle, tome aire y disfrute de la vista.";
+                    actividad="Momento de una caminata, de una vuelta por su calle, tome aire y disfrute de la vista.";
+                    return actividad;
                 }
                 else if(val.buscaLinea(listaActividades.get(i-1),".*canciones.*"))
                 {
-                    return "Disfrute de interpretar sus canciones favoritas en su instrumento deseado.";
-                    //Se podria añadir una pagina web con acordes, para ayudar a pensar cosas que tocar.
+                    
+                    actividad="Disfrute de interpretar sus canciones favoritas en su instrumento deseado.";
+                    return actividad;
                 }
                 else
                 {
-                    return "Momento de hacer literalmente.. nada, apague la pantalla unos minutos, mire a la nada y piense, disfrute de este momento de su vida haciendo absolutamente nada.";
+                    return "Bonus, este tiempo será liberado, puede hacer lo que ud prefiera.";
                 }
         
-        //Avanzando, esto debería tomar mas opciones, desplegar en la misma pantalla actividades a realizar.
-        //O directamente un cafe con un cigarro, a gusto del usuario(dentro de las opciones que el mismo programa barajará).
-    } 
-    
+    }
+    public void abrirLibro()
+    {
+        LeeFichero l=new LeeFichero();
+                    
+                   Textos t=new Textos();
+                    for (int i = 0; i < 20; i++) {
+                        l.devolverLibro();
+                        String str=l.devolverLinea(i);
+                        t.sumarParrafo(str,i);
+                        t.setVisible(true);
+                    }
+    }
+    public void abrirActividad() throws JavaLayerException, FileNotFoundException{
+         if(val.buscaLinea(actividad,".*parrafos.*"))
+                {
+                    
+                   abrirLibro();
+                   
+                }
+                else if(val.buscaLinea(actividad,".*musica.*"))
+                {
+                    //VENTANA IMAGENES
+                    Reproductor r=new Reproductor();
+                    r.reproducir();
+                   
+                     
+                }
+                else if(val.buscaLinea(actividad,".*cafe.*"))
+                {
+                   
+                    
+                }
+                else if(val.buscaLinea(actividad,".*caminata.*"))
+                {
+                   
+                }
+                else if(val.buscaLinea(actividad,".*canciones.*"))
+                {
+                   abrirPaginaWeb();
+                    
+                }
+                else
+                {
+                   
+                }
+        
+    }
+
+    public void abrirPaginaWeb()
+    {
+        String urlString="http://www.lacuerda.net";
+    try {
+        Desktop.getDesktop().browse(new URL(urlString).toURI());
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    }
 }

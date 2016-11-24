@@ -10,9 +10,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.swing.JOptionPane;
+import javazoom.jl.decoder.JavaLayerException;
 
 
 public class ProyectoSemestral {
@@ -24,10 +26,11 @@ private static boolean cierreTope=false;
     /**
      * @param args the command line arguments
      */
-    public static  void main(String[] args)  {
-            Ventana1 v=new Ventana1();
-              v.setVisible(true);
-                  
+    public static  void main(String[] args) throws JavaLayerException, FileNotFoundException  {
+       
+          Ventana1 v=new Ventana1();
+             v.setVisible(true);
+
               
                 
         

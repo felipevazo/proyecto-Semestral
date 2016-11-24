@@ -34,22 +34,29 @@ public class Ventana1 extends javax.swing.JFrame {
         Siguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
-        Titulo.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        Titulo.setForeground(new java.awt.Color(51, 153, 255));
+        Titulo.setBackground(new java.awt.Color(255, 255, 255));
+        Titulo.setFont(new java.awt.Font("American Typewriter", 1, 18)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(0, 102, 102));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titulo.setText("StressFree");
 
         jLabel1.setText("Catalina Aguayo, Felipe Vásquez, Segundo Semestre 2016");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel2.setText("Bienvenido a StressFree");
+        jLabel2.setFont(new java.awt.Font("Moon Flower Bold", 1, 60)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel2.setText("¡ Bienvenido a StressFree !");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel3.setText("App que te ayudará a distribuir tus tiempos de trabajo.");
+        jLabel3.setFont(new java.awt.Font("AppleGothic", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel3.setText("Aplicación que te ayudará a distribuir tus tiempos de trabajo");
 
-        Siguiente.setText("Okay");
+        Siguiente.setBackground(new java.awt.Color(0, 102, 102));
+        Siguiente.setFont(new java.awt.Font("American Typewriter", 0, 24)); // NOI18N
+        Siguiente.setForeground(new java.awt.Color(0, 51, 51));
+        Siguiente.setText("EMPEZAR");
         Siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SiguienteActionPerformed(evt);
@@ -63,44 +70,48 @@ public class Ventana1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(324, 324, 324)
-                        .addComponent(Titulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addContainerGap()
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(272, 272, 272)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(309, 309, 309)
-                        .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(352, Short.MAX_VALUE))
+                        .addGap(357, 357, 357)
+                        .addComponent(Titulo)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 81, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(170, 170, 170))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(68, 68, 68))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Siguiente)
+                        .addGap(308, 308, 308))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addComponent(Titulo)
-                .addGap(61, 61, 61)
+                .addGap(154, 154, 154)
                 .addComponent(jLabel2)
-                .addGap(72, 72, 72)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
-                .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
-                .addComponent(jLabel1))
+                .addGap(98, 98, 98)
+                .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         boolean linea=i.buscaLineaVacia();
         setVisible(false);
-        System.out.println(linea);
         if(linea==true)
         {
              i.ventana2();
@@ -108,7 +119,7 @@ public class Ventana1 extends javax.swing.JFrame {
          }
         else
         {
-            
+            i.ventanaConfirmacion();
            
         }
     }//GEN-LAST:event_SiguienteActionPerformed

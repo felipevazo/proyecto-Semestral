@@ -62,28 +62,38 @@ public class Intermediario {
     }
     public void ventana2()
     {
-        ventana2 v=new ventana2();
+        Ventana2 v=new Ventana2();
         v.setVisible(true);
         
     }
     public void siguienteVentana()
     {
-        //Guarda datos de ventana2, pasa a ventana3.
+        //Guarda datos de Ventana2, pasa a ventana3.
         EscribeFichero escribe=new EscribeFichero();
         escribe.escribeNumeros(topeTrabajo, topeDescanso, topeTotal);
         Ventana3 v2=new Ventana3();
         
         v2.setVisible(true);
     }
-    public  void VentanaYGuardar(boolean libro,boolean caminata,boolean bebida,boolean instrumento,boolean musica) {
+    public  void guardar(boolean libro,boolean caminata,boolean bebida,boolean instrumento,boolean musica) {
         EscribeFichero escribe=new EscribeFichero();
         GestionActividades g=new GestionActividades();
         g.seleccionActividades(libro, caminata, bebida, instrumento, musica);
         setListaActividades(g.getListaActividades());
         escribe.escribeTodo(listaActividades);
-        Ventana4 v=new Ventana4();
+      
+    }
+    public void ventana4()
+    {
+          Ventana4 v=new Ventana4();
         v.setVisible(true);
     }
+    public void ventanaConfirmacion()
+    {
+        VentanaConf v=new VentanaConf();
+        v.setVisible(true);
+    }
+  
     public void contadorTrabajo() throws InterruptedException
     {
        LeeFichero l=new LeeFichero();

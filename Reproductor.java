@@ -7,12 +7,16 @@ package proyectosemestral;
 
 /**
  *
- * @author Hilda
+ * @author Catalina
  */
-import java.io.File;
 
-import javazoom.jlgui.basicplayer.BasicPlayer;
-import javazoom.jlgui.basicplayer.BasicPlayerException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+
 /**
 //REQUIERE INSTALACION DE PAQUETES JAVAZOOM Y BASICPLAYER :3 
  *
@@ -20,17 +24,14 @@ import javazoom.jlgui.basicplayer.BasicPlayerException;
  */
         
 public class Reproductor {
-  public BasicPlayer player=new BasicPlayer();
-    
-public void reproducir()
+  
+
+public void reproducir() throws JavaLayerException, FileNotFoundException
 {   
-     try {
-           // BasicPlayer player= new BasicPlayer(); // Llamo la clase de la libreria Basic Player, que reproduce
-            player.open(new File("animals038.mp3"));
-            player.play();// Llama al método Reproducir también existen los métodos  stop,resume.           
-        } catch (BasicPlayerException ex) {
-            System.out.print("-------Error-----"+ex.getMessage());
-        }// Fin try
+      Player apl = new Player(new FileInputStream(
+            "prueba.mp3"));
+
+      apl.play();
     
 }
     

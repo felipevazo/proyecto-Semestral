@@ -28,25 +28,21 @@ public class Ventana5 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        Texto2 = new javax.swing.JLabel();
         Evento = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        Titulo1 = new javax.swing.JLabel();
+        texto4 = new javax.swing.JLabel();
+        texto3 = new javax.swing.JLabel();
+        Datos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel1.setText("DING DING DING DING DING! Tiempo cumplido");
-
-        Texto2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Texto2.setForeground(new java.awt.Color(51, 153, 255));
-        Texto2.setText("El azar ha decidido que en su descanso usted disfrutara de...");
 
         Evento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Evento.setForeground(new java.awt.Color(0, 153, 255));
         Evento.setText("jLabel3");
 
+        jButton1.setFont(new java.awt.Font("American Typewriter", 0, 36)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,40 +50,67 @@ public class Ventana5 extends javax.swing.JFrame {
             }
         });
 
+        Titulo1.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        Titulo1.setForeground(new java.awt.Color(0, 102, 102));
+        Titulo1.setText("StressFree");
+
+        texto4.setFont(new java.awt.Font("AppleGothic", 0, 36)); // NOI18N
+        texto4.setForeground(new java.awt.Color(0, 153, 153));
+        texto4.setText("¡DING DING DING, Tiempo cumplido!");
+
+        texto3.setFont(new java.awt.Font("American Typewriter", 1, 24)); // NOI18N
+        texto3.setForeground(new java.awt.Color(0, 153, 51));
+        texto3.setText("El azar ha decidido que en su descanso usted disfrutará de...");
+
+        Datos.setText("Catalina Aguayo, Felipe Vásquez, Segundo Semestre 2016");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(texto3)
+                .addGap(40, 40, 40))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(Texto2))
+                        .addGap(101, 101, 101)
+                        .addComponent(texto4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(418, 418, 418)
+                        .addGap(345, 345, 345)
+                        .addComponent(Evento))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(336, 336, 336)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Evento)
-                            .addComponent(jLabel1))))
-                .addContainerGap(207, Short.MAX_VALUE))
+                        .addGap(302, 302, 302)
+                        .addComponent(Titulo1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Datos)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(jLabel1)
-                .addGap(66, 66, 66)
-                .addComponent(Texto2)
-                .addGap(102, 102, 102)
+                .addGap(51, 51, 51)
+                .addComponent(Titulo1)
+                .addGap(72, 72, 72)
+                .addComponent(texto4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(texto3)
+                .addGap(96, 96, 96)
                 .addComponent(Evento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
                 .addComponent(jButton1)
-                .addGap(46, 46, 46))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(Datos)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -134,9 +157,11 @@ public class Ventana5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Datos;
     private javax.swing.JLabel Evento;
-    private javax.swing.JLabel Texto2;
+    private javax.swing.JLabel Titulo1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel texto3;
+    private javax.swing.JLabel texto4;
     // End of variables declaration//GEN-END:variables
 }

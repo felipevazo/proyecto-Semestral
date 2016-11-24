@@ -54,6 +54,7 @@ public class Ventana3 extends javax.swing.JFrame {
         Caminata = new javax.swing.JToggleButton();
         Instrumento = new javax.swing.JToggleButton();
         Datos = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         Titulo.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         Titulo.setForeground(new java.awt.Color(51, 153, 255));
@@ -64,46 +65,51 @@ public class Ventana3 extends javax.swing.JFrame {
         texto4.setText("Leer un parrafo de un libro al azar de nuestro sistema de archivos");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 600));
 
-        Titulo1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        Titulo1.setForeground(new java.awt.Color(51, 153, 255));
+        Titulo1.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        Titulo1.setForeground(new java.awt.Color(0, 102, 102));
         Titulo1.setText("StressFree");
 
-        texto1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto1.setForeground(new java.awt.Color(51, 153, 255));
-        texto1.setText("Ahora debe elegir que le gustaría hacer en su tiempo de descanso.");
+        texto1.setFont(new java.awt.Font("AppleGothic", 0, 24)); // NOI18N
+        texto1.setForeground(new java.awt.Color(0, 153, 153));
+        texto1.setText("Ahora debe elegir que le gustaría hacer en su tiempo de descanso");
 
-        texto2.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto2.setForeground(new java.awt.Color(51, 153, 255));
-        texto2.setText("Marque las opciones correspondientes según sus gustos.");
+        texto2.setFont(new java.awt.Font("AppleGothic", 1, 18)); // NOI18N
+        texto2.setForeground(new java.awt.Color(0, 153, 153));
+        texto2.setText("Marque las opciones correspondientes según sus gustos");
 
-        texto3.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto3.setForeground(new java.awt.Color(51, 153, 255));
+        texto3.setFont(new java.awt.Font("American Typewriter", 0, 16)); // NOI18N
+        texto3.setForeground(new java.awt.Color(0, 153, 51));
         texto3.setText("Leer un parrafo de un libro al azar de nuestro sistema de archivos");
 
-        texto5.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto5.setForeground(new java.awt.Color(51, 153, 255));
-        texto5.setText("Escuchar musica relajante(Si trabaja con mas gente se recomiendan audifonos)");
+        texto5.setFont(new java.awt.Font("American Typewriter", 0, 16)); // NOI18N
+        texto5.setForeground(new java.awt.Color(0, 153, 51));
+        texto5.setText("Escuchar musica relajante");
 
-        texto6.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto6.setForeground(new java.awt.Color(51, 153, 255));
+        texto6.setFont(new java.awt.Font("American Typewriter", 0, 16)); // NOI18N
+        texto6.setForeground(new java.awt.Color(0, 153, 51));
         texto6.setText("Beber una bebida caliente (puede acompañarla con un cigarro si usted fuma)");
 
-        texto7.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto7.setForeground(new java.awt.Color(51, 153, 255));
+        texto7.setFont(new java.awt.Font("American Typewriter", 0, 16)); // NOI18N
+        texto7.setForeground(new java.awt.Color(0, 153, 51));
         texto7.setText("Salir a caminar por su sector(no recomendable si esta lloviendo)");
 
-        texto8.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        texto8.setForeground(new java.awt.Color(51, 153, 255));
+        texto8.setFont(new java.awt.Font("American Typewriter", 0, 16)); // NOI18N
+        texto8.setForeground(new java.awt.Color(0, 153, 51));
         texto8.setText("Tocar algún instrumento de su gusto(SOLO APLICABLE TRABAJANDO EN CASA)");
 
-        Libro.setText("click aqui");
+        Libro.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
+        Libro.setForeground(new java.awt.Color(0, 51, 51));
+        Libro.setText("click aquí");
         Libro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LibroActionPerformed(evt);
             }
         });
 
+        Siguiente.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
+        Siguiente.setForeground(new java.awt.Color(0, 51, 51));
         Siguiente.setText("Siguiente");
         Siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,28 +117,37 @@ public class Ventana3 extends javax.swing.JFrame {
             }
         });
 
+        Bebida.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
+        Bebida.setForeground(new java.awt.Color(0, 51, 51));
         Bebida.setText("click aqui");
+        Bebida.setActionCommand("click aquí");
         Bebida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BebidaActionPerformed(evt);
             }
         });
 
-        Musica.setText("click aqui");
+        Musica.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
+        Musica.setForeground(new java.awt.Color(0, 51, 51));
+        Musica.setText("click aquí");
         Musica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MusicaActionPerformed(evt);
             }
         });
 
-        Caminata.setText("click aqui");
+        Caminata.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
+        Caminata.setForeground(new java.awt.Color(0, 51, 51));
+        Caminata.setText("click aquí");
         Caminata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CaminataActionPerformed(evt);
             }
         });
 
-        Instrumento.setText("click aqui");
+        Instrumento.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
+        Instrumento.setForeground(new java.awt.Color(0, 51, 61));
+        Instrumento.setText("click aquí");
         Instrumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InstrumentoActionPerformed(evt);
@@ -141,96 +156,101 @@ public class Ventana3 extends javax.swing.JFrame {
 
         Datos.setText("Catalina Aguayo, Felipe Vásquez, Segundo Semestre 2016");
 
+        jLabel1.setFont(new java.awt.Font("American Typewriter", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel1.setText("(Si trabaja con mas gente se recomiendan audifonos)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(texto1)
-                            .addGap(188, 188, 188))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(texto8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(texto5)
-                                    .addGap(14, 14, 14)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Musica)
-                                .addComponent(Instrumento))
-                            .addGap(28, 28, 28))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(texto7)
-                            .addContainerGap()))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Caminata)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(texto6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Bebida))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(texto3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Libro))))
-                        .addGap(29, 29, 29))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(306, 306, 306)
-                .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(Datos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(texto8)
+                    .addComponent(texto5)
+                    .addComponent(jLabel1)
+                    .addComponent(texto6)
+                    .addComponent(texto7)
+                    .addComponent(texto3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Bebida)
+                            .addComponent(Caminata)
+                            .addComponent(Musica)
+                            .addComponent(Libro))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Instrumento)
+                        .addContainerGap(20, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(texto1)
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(texto2)
+                        .addGap(222, 222, 222))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(367, 367, 367)
+                        .addGap(298, 298, 298)
                         .addComponent(Titulo1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addComponent(texto2))
-                    .addComponent(Datos))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(337, 337, 337)
+                        .addComponent(Siguiente)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(48, 48, 48)
                 .addComponent(Titulo1)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addComponent(texto1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(texto2)
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(texto3)
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(texto3)
+                            .addComponent(Instrumento))
+                        .addGap(22, 22, 22)
+                        .addComponent(texto5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1))
                     .addComponent(Libro))
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(texto5)
+                    .addComponent(texto6)
                     .addComponent(Musica))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Bebida)
-                    .addComponent(texto6))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(texto7)
-                    .addComponent(Caminata))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(texto8)
-                    .addComponent(Instrumento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
-                .addComponent(Siguiente)
-                .addGap(11, 11, 11)
-                .addComponent(Datos))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(texto8)
+                            .addComponent(Caminata))
+                        .addGap(25, 25, 25)
+                        .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(Datos))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Bebida)
+                            .addComponent(texto7))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LibroActionPerformed
@@ -240,7 +260,8 @@ public class Ventana3 extends javax.swing.JFrame {
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         
         setVisible(false);
-        i.VentanaYGuardar(Libro.isSelected(), Caminata.isSelected(),Bebida.isSelected(),Instrumento.isSelected(),Musica.isSelected());
+        i.guardar(Libro.isSelected(), Caminata.isSelected(),Bebida.isSelected(),Instrumento.isSelected(),Musica.isSelected());
+        i.ventana4();
     }//GEN-LAST:event_SiguienteActionPerformed
 
     private void BebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BebidaActionPerformed
@@ -310,6 +331,7 @@ public class Ventana3 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JLabel texto1;
     private javax.swing.JLabel texto2;

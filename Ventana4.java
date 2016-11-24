@@ -31,11 +31,11 @@ public class Ventana4 extends javax.swing.JFrame {
     private void initComponents() {
 
         texto1 = new javax.swing.JLabel();
-        Titulo1 = new javax.swing.JLabel();
         Datos = new javax.swing.JLabel();
-        texto2 = new javax.swing.JLabel();
         texto3 = new javax.swing.JLabel();
         Ok = new javax.swing.JButton();
+        Titulo1 = new javax.swing.JLabel();
+        texto4 = new javax.swing.JLabel();
 
         texto1.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         texto1.setForeground(new java.awt.Color(51, 153, 255));
@@ -44,20 +44,14 @@ public class Ventana4 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 700));
 
-        Titulo1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
-        Titulo1.setForeground(new java.awt.Color(51, 153, 255));
-        Titulo1.setText("StressFree");
-
         Datos.setText("Catalina Aguayo, Felipe Vásquez, Segundo Semestre 2016");
 
-        texto2.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        texto2.setForeground(new java.awt.Color(51, 153, 255));
-        texto2.setText("Ahora el contador Comenzará a correr");
+        texto3.setFont(new java.awt.Font("American Typewriter", 1, 24)); // NOI18N
+        texto3.setForeground(new java.awt.Color(0, 153, 51));
+        texto3.setText("¡Presiona Ok y sácale provecho al tiempo de trabajo!");
 
-        texto3.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        texto3.setForeground(new java.awt.Color(51, 153, 255));
-        texto3.setText("¡Presiona Ok y sacale provecho al tiempo de trabajo!");
-
+        Ok.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        Ok.setForeground(new java.awt.Color(0, 51, 51));
         Ok.setText("OK");
         Ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,46 +59,57 @@ public class Ventana4 extends javax.swing.JFrame {
             }
         });
 
+        Titulo1.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        Titulo1.setForeground(new java.awt.Color(0, 102, 102));
+        Titulo1.setText("StressFree");
+
+        texto4.setFont(new java.awt.Font("AppleGothic", 0, 24)); // NOI18N
+        texto4.setForeground(new java.awt.Color(0, 153, 153));
+        texto4.setText("Ahora el contador comezará a correr");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 148, Short.MAX_VALUE)
-                .addComponent(texto3)
-                .addGap(143, 143, 143))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(387, 387, 387)
-                        .addComponent(Titulo1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Datos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addComponent(texto2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(Ok, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(Datos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 119, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Titulo1)
+                        .addGap(276, 276, 276))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(texto4)
+                        .addGap(179, 179, 179))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(texto3)
+                        .addGap(51, 51, 51))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Ok, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(330, 330, 330))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(45, 45, 45)
                 .addComponent(Titulo1)
-                .addGap(75, 75, 75)
-                .addComponent(texto2)
-                .addGap(191, 191, 191)
+                .addGap(120, 120, 120)
+                .addComponent(texto4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(texto3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addGap(91, 91, 91)
                 .addComponent(Ok)
-                .addGap(41, 41, 41)
-                .addComponent(Datos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addComponent(Datos)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
@@ -115,7 +120,7 @@ public class Ventana4 extends javax.swing.JFrame {
         } catch (InterruptedException ex) {
             Logger.getLogger(Ventana4.class.getName()).log(Level.SEVERE, null, ex);
         }
-    //GEN-LAST:event_OkActionPerformed
+                                      
 
         
     }//GEN-LAST:event_OkActionPerformed
@@ -160,7 +165,7 @@ public class Ventana4 extends javax.swing.JFrame {
     private javax.swing.JButton Ok;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel texto1;
-    private javax.swing.JLabel texto2;
     private javax.swing.JLabel texto3;
+    private javax.swing.JLabel texto4;
     // End of variables declaration//GEN-END:variables
 }
