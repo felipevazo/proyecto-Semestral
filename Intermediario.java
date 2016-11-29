@@ -10,8 +10,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Hilda
+ * @author Felipe
  */
+
+//Clase que hace de todo, pero no sabe nada.
 public class Intermediario {
     private double topeTrabajo,topeDescanso;
     private int topeTotal;
@@ -68,7 +70,8 @@ public class Intermediario {
     }
     public void siguienteVentana()
     {
-        //Guarda datos de Ventana2, pasa a ventana3.
+        //Llama a metodo escribeNumeros en clase EscribeFichero
+        //Pasa a siguiente ventana
         EscribeFichero escribe=new EscribeFichero();
         escribe.escribeNumeros(topeTrabajo, topeDescanso, topeTotal);
         Ventana3 v2=new Ventana3();
@@ -76,6 +79,10 @@ public class Intermediario {
         v2.setVisible(true);
     }
     public  void guardar(boolean libro,boolean caminata,boolean bebida,boolean instrumento,boolean musica) {
+        //Variable ingreso: boolean,boolean,boolean,boolean,boolean
+        //Llama metodo escribeTodo en clase EscribeFichero
+        //LLama metodo seleccion de actividades en clase GestionActividades
+        //Llama metodo 
         EscribeFichero escribe=new EscribeFichero();
         GestionActividades g=new GestionActividades();
         g.seleccionActividades(libro, caminata, bebida, instrumento, musica);
@@ -85,17 +92,23 @@ public class Intermediario {
     }
     public void ventana4()
     {
+        //Instancia Ventana4
           Ventana4 v=new Ventana4();
         v.setVisible(true);
     }
     public void ventanaConfirmacion()
     {
+        //Instancia VentanaConfirmacion
         VentanaConf v=new VentanaConf();
         v.setVisible(true);
     }
   
     public void contadorTrabajo() throws InterruptedException
     {
+        //Llama metodo ArrayAlumnos en clase LeeFichero
+        //LLama contador en clase GestionContador
+        //LLama metodo elegirActividad y ventanaActividad en misma clase
+        
        LeeFichero l=new LeeFichero();
        l.ArrayNumeros();
        topeTrabajo=val.stringDouble(l.devolverNumero(0));
@@ -108,16 +121,20 @@ public class Intermediario {
     }
     private void elegirActividad()
     {
+        //Llama metodo pasarArray en LeeFichero
+        
         GestionActividades g=new GestionActividades();
         LeeFichero l=new LeeFichero();
         l.pasarArray();
         
         ArrayList<String> aux=new ArrayList<String>();
+        //En ciclo llama metodo devolverString en LeeFichero
         
         for (int i = 3; i <l.devolverTamaño() ; i++) {
             aux.add(l.devolverString(i));
             
         }
+        //variable actividad toma valor de metodo actividades en clase GestionActividades
         g.setListaActividades(aux);
 
         this.actividad=g.actividades(aux.size());
@@ -125,6 +142,7 @@ public class Intermediario {
     }
     private void ventanaActividad()
     {
+        //Instancia ventana5
         Ventana5 v=new Ventana5();
         v.evento(this.actividad);
         v.setVisible(true);
@@ -132,12 +150,14 @@ public class Intermediario {
     }
     public void contadorDescanso() throws InterruptedException
     {
+        //Llama metodo contador
         GestionContador g=new GestionContador();
         this.contadorTotal=g.contador(topeDescanso, contadorTotal, topeTotal);
         
     }
 
     boolean buscaLineaVacia() {
+        //Llama metodo lineaVacia en clase Validador
         return val.lineaVacia();
     }
     
