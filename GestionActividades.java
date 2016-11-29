@@ -21,10 +21,12 @@ public class GestionActividades {
     String actividad;
 
     public ArrayList<String> getListaActividades() {
+        //Retorna ArrayList listaActividades
         return listaActividades;
     }
 
     public void setListaActividades(ArrayList<String> listaActividades) {
+        //SetArrayList(listaActividades)
         this.listaActividades = listaActividades;
     }
     
@@ -35,41 +37,51 @@ public class GestionActividades {
 
     public double getTopeTrabajo() {
         return topeTrabajo;
+         //Retorna double topeTrabajo
     }
 
     public void setTopeTrabajo(double topeTrabajo) {
+        //Ingresa double.
         this.topeTrabajo = topeTrabajo;
+        
     }
 
     public double getTopeDescanso() {
+         //Retorna double topeDescanso
         return topeDescanso;
     }
 
     public void setTopeDescanso(double topeDescanso) {
+        //Ingresa Double
         this.topeDescanso = topeDescanso;
     }
 
     public int getTopeTotal() {
+        //Retorna Int topeTotal
         return topeTotal;
     }
 
     public void setTopeTotal(int topeTotal) {
+        //Ingresa int
         this.topeTotal = topeTotal;
     }
 
     public int getContadorTope() {
+        //Retorna int getContadorTope
         return contadorTope;
     }
 
     public void setContadorTope(int contadorTope) {
+        //Ingresa int
         this.contadorTope = contadorTope;
     }
     public void seleccionActividades(boolean libro,boolean caminata,boolean bebida,boolean instrumento,boolean musica )
         {
-            //Se crea una variable resp por mientras que aprendemos a interactuar con ventanas.
             
-            //Actividades tentativas
-           
+        
+            //Ingresan 5 booleans, por cada 1 se guarda opcion en arrayList
+            //En orden "Leer parrafos de libros","Reproducir musica relajante","Momento de descanso, con un cigarro y un cafe","Una caminata por su sector","Interpretar canciones para distraerse"
+        
            
             if(libro==true)
             {
@@ -93,15 +105,14 @@ public class GestionActividades {
             {
                 listaActividades.add("Interpretar canciones para distraerse.");
             }
+
             
-            //aquí hay que colocar imagenes en una ventana, creo que queda mejor así que ir preguntando uno por uno y que el usuario
-            //decida si o no. Supuestamente lo veremos mas adelante, asi que se puede hacer
             
-            //la imagen podria guardar datos en el arraylist que instancie arriba, para que sea mas facil obtener los topes luego(usando el arraylist.size y todo eso)
         }
     public String actividades(int numeroActividades)
     {
-        //Basicamente, el azar decidirá la actividad para el agotado usuario.
+        //Ingresa int numeroActividades
+        //Retorna String de ArrayList listaActividades al azar.
         int i=(int)(Math.random()*(numeroActividades-1)+1 );
 
               
@@ -141,6 +152,7 @@ public class GestionActividades {
     }
     public void abrirLibro()
     {
+        // Abre ventana Textos
         LeeFichero l=new LeeFichero();
                     
                    Textos t=new Textos();
@@ -152,6 +164,8 @@ public class GestionActividades {
                     }
     }
     public void abrirActividad() throws JavaLayerException, FileNotFoundException{
+        //Abre alguna actividad elegida anteriormente
+        
          if(val.buscaLinea(actividad,".*parrafos.*"))
                 {
                     
@@ -189,6 +203,7 @@ public class GestionActividades {
 
     public void abrirPaginaWeb()
     {
+        //Abre pagina con acordes
         String urlString="http://www.lacuerda.net";
     try {
         Desktop.getDesktop().browse(new URL(urlString).toURI());
