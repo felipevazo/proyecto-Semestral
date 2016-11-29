@@ -14,12 +14,10 @@ import java.util.ArrayList;
 
 public class EscribeFichero
 {
-    public static void main(String[] args)
-    {
-        
-    }
     public void escribeNumeros(double topeTrabajo,double topeDescanso,int topeTotal)
     {
+        //Variables ingreso: double,double,int
+        //Guarda estos datos en archivo de datos.txt
        
         FileWriter fichero = null;
         PrintWriter pw = null;
@@ -35,8 +33,6 @@ public class EscribeFichero
             e.printStackTrace();
         } finally {
            try {
-           // Nuevamente aprovechamos el finally para 
-           // asegurarnos que se cierra el fichero.
            if (null != fichero)
               fichero.close();
            } catch (Exception e2) {
@@ -47,6 +43,9 @@ public class EscribeFichero
     }
     public void escribeTodo(ArrayList<String> listaActividades)
     {
+        //Variable entrada: ArrayList de String
+        //Escribe los String bajo los datos numericos en datos.txt
+        
         LeeFichero lee=new LeeFichero();
         lee.ArrayNumeros();
         ArrayList<String> numeros=new ArrayList<String>();
