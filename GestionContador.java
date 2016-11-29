@@ -15,6 +15,8 @@ public class GestionContador {
     
      public  int contador(double tope, int contadorTotal, int topeTotal) throws InterruptedException
     {
+         //Ingresa: double,int,int
+         //Abre contador (con InterruptedException) con tope (tope*60) minutos
         
         int minTotales=(int)tope*60;
         int minutos=0;
