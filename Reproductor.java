@@ -18,7 +18,7 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 /**
-//REQUIERE INSTALACION DE PAQUETES JAVAZOOM Y BASICPLAYER :3 
+//REQUIERE INSTALACION DE PAQUETES JAVAZOOM Y BASICPLAYER 1.01
  *
  * @author Rodrigo
  */
@@ -28,6 +28,7 @@ public class Reproductor {
 
 public void reproducir() throws JavaLayerException, FileNotFoundException
 {   
+        //Reproduce archivo prueba.mp3
       Player apl = new Player(new FileInputStream(
             "prueba.mp3"));
 
