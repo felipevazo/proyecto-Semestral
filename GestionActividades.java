@@ -50,7 +50,11 @@ public class GestionActividades {
          //Retorna double topeDescanso
         return topeDescanso;
     }
-
+    public void setActividad(String actividad);
+    {
+        this.actividad=actividad;
+    }
+    
     public void setTopeDescanso(double topeDescanso) {
         //Ingresa Double
         this.topeDescanso = topeDescanso;
