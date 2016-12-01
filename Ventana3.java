@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Hilda
  */
 public class Ventana3 extends javax.swing.JFrame {
-    GestionActividades g=new GestionActividades();
+    //GestionActividades g=new GestionActividades();
     Intermediario i=new Intermediario();
     /**
      * Creates new form Ventana3
