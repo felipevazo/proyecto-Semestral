@@ -111,8 +111,19 @@ public class Ventana5 extends javax.swing.JFrame {
             case "a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.":
             {
                 g.detenerReproductor();
+                g.cerarImagenes();
             }
+            default:
+                {
+                    
+                }
+                
         }
+        setVisible(false);
+        i.contadorTrabajo();
+        
+        
+        
             
     }//GEN-LAST:event_jButton1ActionPerformed
 
