@@ -174,7 +174,7 @@ public class GestionActividades {
                 }
                 else if(val.buscaLinea(actividad,".*musica.*"))
                 {
-                    CambiarImagen c=new CambiarImagen();
+                   
                         
                     Reproductor r=new Reproductor();
                     r.reproducir();
