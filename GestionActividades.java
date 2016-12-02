@@ -1,5 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
+/ * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -19,7 +18,8 @@ import javazoom.jl.decoder.JavaLayerException;
  */
 public class GestionActividades {
     String actividad;
-
+    Reproductor r=new Reproductor();
+    CambiarImagen c=new CambiarImagen();
     public ArrayList<String> getListaActividades() {
         //Retorna ArrayList listaActividades
         return listaActividades;
@@ -174,9 +174,8 @@ public class GestionActividades {
                 }
                 else if(val.buscaLinea(actividad,".*musica.*"))
                 {
-                   
+                    c.mostrar();
                         
-                    Reproductor r=new Reproductor();
                     r.reproducir();
                    
                      
@@ -201,7 +200,15 @@ public class GestionActividades {
                 }
         
     }
-
+    
+    public void detenerReproductor()
+    {
+        r.detener();
+    }
+    public void cerrarImagenes()
+    {
+        c.cerrar();
+    }
     public void abrirPaginaWeb()
     {
         //Abre pagina con acordes
