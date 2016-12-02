@@ -226,7 +226,7 @@ public class Ventana2 extends javax.swing.JFrame {
        a=val.confirmarDoubles(t, tot, d);
        if(a)
        {
-       setVisible(false);
+       dispose();
        i.siguienteVentana();
        }
        else
