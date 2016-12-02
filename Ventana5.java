@@ -106,6 +106,14 @@ public class Ventana5 extends javax.swing.JFrame {
         } catch (InterruptedException ex) {
             Logger.getLogger(Ventana4.class.getName()).log(Level.SEVERE, null, ex);
         }
+        switch(Evento.getText())
+        {
+            case "a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.":
+            {
+                g.detenerReproductor();
+            }
+        }
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
