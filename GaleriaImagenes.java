@@ -16,7 +16,10 @@ import javax.swing.ImageIcon;
  */
 public class GaleriaImagenes {
     private int contador=0;
+    
+    Galeria galeria=new Galeria();    
     public void  galeria()
+    
     {
         
         int velocidad=5; //los segundos que aparece la imagen
@@ -26,7 +29,6 @@ public class GaleriaImagenes {
         
         int velocidadmili=velocidad*1000; //velocidad en milisegundos
         
-        Galeria galeria=new Galeria();
         galeria.setVisible(true);
         
         tarea = new TimerTask() {
@@ -57,5 +59,9 @@ public class GaleriaImagenes {
         timer = new Timer();
         timer.scheduleAtFixedRate(tarea, velocidadmili, velocidadmili);
         
+    }
+    public void cerrar()
+    {
+        dispose();
     }
 }
