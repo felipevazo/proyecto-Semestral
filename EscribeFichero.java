@@ -1,24 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectosemestral;
 
-/**
- *
- * @author dci
- */
 import java.io.*;
 import java.util.ArrayList;
-
+/**
+ *
+ * @author Catalina
+ */
 public class EscribeFichero
 {
-    public void escribeNumeros(double topeTrabajo,double topeDescanso,int topeTotal)
+    public static void main(String[] args)
     {
-        //Variables ingreso: double,double,int
-        //Guarda estos datos en archivo de datos.txt
-       
+        
+    }     
+    
+    /**
+    * Variables ingreso: double,double,int
+    * Guarda estos datos en archivo de datos.txt
+    */  
+    public void escribeNumeros(double topeTrabajo,double topeDescanso,int topeTotal) {
         FileWriter fichero = null;
         PrintWriter pw = null;
         try
@@ -33,6 +32,8 @@ public class EscribeFichero
             e.printStackTrace();
         } finally {
            try {
+           // Nuevamente aprovechamos el finally para 
+           // asegurarnos que se cierra el fichero.
            if (null != fichero)
               fichero.close();
            } catch (Exception e2) {
@@ -41,11 +42,13 @@ public class EscribeFichero
         }
     
     }
+        /**
+         * Variable entrada: ArrayList de String
+         *Escribe los String bajo los datos numericos en datos.txt        
+         */    
     public void escribeTodo(ArrayList<String> listaActividades)
-    {
-        //Variable entrada: ArrayList de String
-        //Escribe los String bajo los datos numericos en datos.txt
-        
+    { 
+
         LeeFichero lee=new LeeFichero();
         lee.ArrayNumeros();
         ArrayList<String> numeros=new ArrayList<String>();
