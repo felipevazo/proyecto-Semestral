@@ -24,20 +24,17 @@ import javazoom.jl.player.Player;
  */
         
 public class Reproductor {
-  Player apl = new Player(new FileInputStream(
-            "prueba.mp3"));
+  
 
 
 public void reproducir() throws JavaLayerException, FileNotFoundException
 {   
         //Reproduce archivo prueba.mp3
-      
+      Player apl = new Player(new FileInputStream(
+            "prueba.mp3"));
       apl.play();
     
 }
-        public void detener()
-        {
-                apl.stop();
-        }
+      
     
 }
