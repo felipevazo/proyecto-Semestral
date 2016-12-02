@@ -10,7 +10,8 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.decoder.JavaLayerException
+Reproductor r=new Reproductor();
 
 
 /**
@@ -179,7 +180,6 @@ public class GestionActividades {
                 else if(val.buscaLinea(actividad,".*musica.*"))
                 {
                     //VENTANA IMAGENES
-                    Reproductor r=new Reproductor();
                     r.reproducir();
                    
                      
@@ -203,6 +203,10 @@ public class GestionActividades {
                    
                 }
         
+    }
+    public void detenerReproductor()
+    {
+        r.detener();
     }
 
     public void abrirPaginaWeb()
