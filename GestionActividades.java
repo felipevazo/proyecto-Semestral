@@ -10,8 +10,7 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-import javazoom.jl.decoder.JavaLayerException
-Reproductor r=new Reproductor();
+import javazoom.jl.decoder.JavaLayerException;
 
 
 /**
@@ -51,11 +50,7 @@ public class GestionActividades {
          //Retorna double topeDescanso
         return topeDescanso;
     }
-    public void setActividad(String actividad);
-    {
-        this.actividad=actividad;
-    }
-    
+
     public void setTopeDescanso(double topeDescanso) {
         //Ingresa Double
         this.topeDescanso = topeDescanso;
@@ -179,7 +174,9 @@ public class GestionActividades {
                 }
                 else if(val.buscaLinea(actividad,".*musica.*"))
                 {
-                    //VENTANA IMAGENES
+                    CambiarImagen c=new CambiarImagen();
+                        
+                    Reproductor r=new Reproductor();
                     r.reproducir();
                    
                      
@@ -203,10 +200,6 @@ public class GestionActividades {
                    
                 }
         
-    }
-    public void detenerReproductor()
-    {
-        r.detener();
     }
 
     public void abrirPaginaWeb()
