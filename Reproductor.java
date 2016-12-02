@@ -35,5 +35,9 @@ public void reproducir() throws JavaLayerException, FileNotFoundException
       apl.play();
     
 }
+        public void detener()
+        {
+                apl.stop();
+        }
     
 }
