@@ -29,7 +29,10 @@ public class GestionActividades {
         //SetArrayList(listaActividades)
         this.listaActividades = listaActividades;
     }
-    
+    public void setActividad(String actividad)
+    {
+        this.actividad=actividad;
+    }
     private ArrayList<String> listaActividades=new ArrayList<String>();
     Validaciones val=new Validaciones();
     public double topeTrabajo, topeDescanso;
