@@ -111,7 +111,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         boolean linea=i.buscaLineaVacia();
-        setVisible(false);
+        dispose();
         if(linea==true)
         {
              i.ventana2();
