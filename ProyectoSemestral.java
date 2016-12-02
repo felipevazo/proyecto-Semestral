@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the
- */
-// ÚLTIMA ACTUALIZACIÓN EN CONJUNTO PARA PRIMER AVANCE 26/09/2016
 package proyectosemestral;
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,23 +21,16 @@ private static boolean cierreTope=false;
     /**
      * @param args the command line arguments
      */
+
+     /**
+      * se visualiza la primera ventana del programa
+      * @param args
+      * @throws JavaLayerException
+      * @throws FileNotFoundException 
+      */
     public static  void main(String[] args) throws JavaLayerException, FileNotFoundException  {
-       
-          Ventana1 v=new Ventana1();
-             v.setVisible(true);
-
-              
-                
         
+          Ventana1 v=new Ventana1(); //crea objeto de tipo ventana 1
+          v.setVisible(true); //se hace visible la ventana 1
     }
-   
-
-   
-      
-        
-    
-   
-
-
-   
 }

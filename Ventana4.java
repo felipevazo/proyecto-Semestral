@@ -42,7 +42,6 @@ public class Ventana4 extends javax.swing.JFrame {
         texto1.setText("A continuacion deberás rellenar unos datos");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 700));
 
         Datos.setText("Catalina Aguayo, Felipe Vásquez, Segundo Semestre 2016");
 
@@ -113,7 +112,7 @@ public class Ventana4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
-        setVisible(false);
+        dispose();
 //        i.contadorTrabajo();
          try {
             i.contadorTrabajo();

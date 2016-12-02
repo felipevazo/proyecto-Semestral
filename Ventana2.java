@@ -53,6 +53,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
         texto6.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
         texto6.setForeground(new java.awt.Color(0, 153, 51));

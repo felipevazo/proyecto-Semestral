@@ -6,8 +6,10 @@
 
 package proyectosemestral;
 
+import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javazoom.jl.decoder.JavaLayerException;
 
 /**
  *
@@ -38,19 +40,22 @@ public class Ventana5 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel1.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("DING DING DING DING DING! Tiempo cumplido");
 
-        Texto2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Texto2.setForeground(new java.awt.Color(51, 153, 255));
+        Texto2.setFont(new java.awt.Font("AppleGothic", 0, 24)); // NOI18N
+        Texto2.setForeground(new java.awt.Color(0, 153, 153));
         Texto2.setText("El azar ha decidido que en su descanso usted disfrutara de...");
 
-        Evento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Evento.setForeground(new java.awt.Color(0, 153, 255));
+        Evento.setFont(new java.awt.Font("American Typewriter", 1, 24)); // NOI18N
+        Evento.setForeground(new java.awt.Color(0, 153, 51));
         Evento.setText("jLabel3");
 
+        jButton1.setFont(new java.awt.Font("American Typewriter", 1, 36)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,65 +70,63 @@ public class Ventana5 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(Texto2))
+                        .addGap(85, 85, 85)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(418, 418, 418)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Evento)
-                            .addComponent(jLabel1))))
-                .addContainerGap(207, Short.MAX_VALUE))
+                        .addGap(192, 192, 192)
+                        .addComponent(Texto2)))
+                .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Evento)
+                    .addComponent(jButton1))
+                .addGap(476, 476, 476))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(182, 182, 182)
                 .addComponent(jLabel1)
-                .addGap(66, 66, 66)
+                .addGap(43, 43, 43)
                 .addComponent(Texto2)
-                .addGap(102, 102, 102)
+                .addGap(108, 108, 108)
                 .addComponent(Evento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(46, 46, 46))
+                .addGap(63, 63, 63)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       GestionActividades g=new GestionActividades();
-       g.setActividad(Evento.getText());
-       g.abrirActividad();
-        
-        try {
-            i.contadorDescanso();
+        try {                                         
+            GestionActividades g=new GestionActividades();
+            g.setActividad(Evento.getText());
+            g.abrirActividad();
             
-            
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Ventana4.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        switch(Evento.getText())
-        {
-            case "a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.":
-            {
-                g.detenerReproductor();
-                g.cerarImagenes();
+            try {
+                i.contadorDescanso();
+                
+                
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Ventana4.class.getName()).log(Level.SEVERE, null, ex);
             }
-            default:
+            switch(Evento.getText())
+            {
+                case "a continuacion sonara musica relajante, mientras aparecen un par de imagenes para ayudar a la distraccion.":
                 {
-                    
+                    g.cerrarImagenes();
                 }
                 
+            }
+            
+        } catch (JavaLayerException ex) {
+            Logger.getLogger(Ventana5.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Ventana5.class.getName()).log(Level.SEVERE, null, ex);
         }
-        setVisible(false);
-        i.contadorTrabajo();
-        
-        
-        
             
     }//GEN-LAST:event_jButton1ActionPerformed
 

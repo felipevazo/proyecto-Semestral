@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Hilda
  */
 public class Ventana3 extends javax.swing.JFrame {
-    //GestionActividades g=new GestionActividades();
+
     Intermediario i=new Intermediario();
     /**
      * Creates new form Ventana3
@@ -259,7 +259,7 @@ public class Ventana3 extends javax.swing.JFrame {
 
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         
-        setVisible(false);
+        dispose();
         i.guardar(Libro.isSelected(), Caminata.isSelected(),Bebida.isSelected(),Instrumento.isSelected(),Musica.isSelected());
         i.ventana4();
     }//GEN-LAST:event_SiguienteActionPerformed

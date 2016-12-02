@@ -126,13 +126,10 @@ public class VentanaConf extends javax.swing.JFrame {
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         Intermediario i=new Intermediario();
         setVisible(false);
-        if(Si.isSelected())
-        {
+        if(Si.isSelected()) {
             i.ventana2();
         }
-        else
-        {
-
+        else {
             i.ventana4();
         }
     }//GEN-LAST:event_SiguienteActionPerformed

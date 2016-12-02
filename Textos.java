@@ -21,7 +21,7 @@ public class Textos extends javax.swing.JFrame {
     
     public void sumarParrafo(String str,int i)
     {
-        //Añade str en TextArea Texto.
+        
         Texto.setText(Texto.getText()+"\n"+str);
         Texto.setEnabled(false);
     }
